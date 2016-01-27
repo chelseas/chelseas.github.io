@@ -1,1 +1,11 @@
+.billboard {
+  background-image:url('http://goo.gl/04j7Nn');
+  height: 500px;
+}
 
+.billboard h1 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
