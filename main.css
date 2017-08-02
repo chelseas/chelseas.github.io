@@ -9,3 +9,9 @@
   font-family: 'Shift', sans-serif;
   font-weight: bold;
 }
+
+a:link {
+    color: black; 
+    background-color: transparent; 
+    text-decoration: none;
+}
