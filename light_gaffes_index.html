@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body>
+  <p id = "title">Do you often find yourself in awkward scenarios? Well look no further! Introducing the Light Gaffe AI Bot. They'll get you out of awkward scenarios with these handy tips.</p>
+
+  <button onclick="generate_scenario(this)">Generate Gaffe</button>
+
+<p id = "gaffe"></p>
+
+   <button onclick="generate_solution(this)">Generate Solution</button>
+
+<p id = "solution"></p>
+<p id = "sorry"></p>
+
+  <script>
+  
+var times_gen=0;
+var times_solved=0;  
+  
+function generate_scenario(btn) {
+    subject = ["grandma", "I", "mom"]
+    verb = ["tripped", "insulted", "spilled coffee on", "picked my nose in front of"]
+    object = ["my teacher", "the cashier", "my kid", "the president"]
+
+    str = subject[Math.ceil(Math.random()*subject.length-1)] + ' ' + verb[Math.ceil(Math.random()*verb.length-1)] + ' ' + object[Math.ceil(Math.random()*object.length-1)]
+ 
+    document.getElementById("gaffe").innerHTML = str
+    
+    checkTimeGen(btn)
+    
+}
+
+function generate_solution(btn){
+  verb = ["praise their", "bequeath unto them", "shower them with", "apologize for the", "promise to be their", "hold their"]
+  noun = ["flowers", "chocolates", "love", "barbecue", "talents", "first born child", "compliments", "raindrops", "sadness", "stupidity", "awkwardness", "hand"]
+
+  str = verb[Math.ceil(Math.random()*verb.length-1)] + ' ' + noun[Math.ceil(Math.random()*noun.length-1)]
+
+  document.getElementById("solution").innerHTML = str
+
+checkTimeSolved(btn)
+}
+
+function checkTimeGen(btn){
+  if(times_gen<20){
+     ++times_gen;
+  }
+  else{
+    btn.disabled=true;
+    document.getElementById("sorry").innerHTML = 'look buddy, I can only help you so many times';
+    setTimeout(function(){ times_gen=0; }, 86400000);
+  }
+}
+
+function checkTimeSolved(btn){
+  if(times_solved<20){
+     ++times_solved;
+  }
+  else{
+    btn.disabled=true;
+    document.getElementById("sorry").innerHTML = 'look buddy, I can only help you so many times';
+    setTimeout(function(){ times_solved=0; }, 86400000);
+  }
+}
+
+  </script>
+
+  </body>
+</html>
